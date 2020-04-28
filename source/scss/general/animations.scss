@@ -1,0 +1,17 @@
+@keyframes slideInVertical {
+  from {
+    transform: translateY(70%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes slideInHorizontal {
+  from {
+    transform: translateX(70%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

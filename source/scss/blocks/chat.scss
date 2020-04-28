@@ -184,3 +184,7 @@
 .chat__footer {
   margin-top: auto;
 }
+
+.screen--game.active .chat__message-input {
+  animation: slideInHorizontal 1s ease both
+}
