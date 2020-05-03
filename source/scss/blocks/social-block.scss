@@ -6,6 +6,10 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    .social-block__list li {
+      opacity: 1;
+    }
   }
 }
 
@@ -17,7 +21,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.35s ease-in-out;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -36,7 +40,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.35s ease-in-out;
   }
 
   svg {
@@ -89,9 +93,7 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -131,12 +133,10 @@
   }
 
   &:hover {
-    opacity: 1;
     pointer-events: auto;
   }
 
   &:focus-within {
-    opacity: 1;
     pointer-events: auto;
   }
 
@@ -148,6 +148,8 @@
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -160,6 +162,18 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       margin: 0 1.25rem;
     }
+
+    &:first-child {
+      transition-delay: 0;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    &:last-child {
+      transition-delay: 0.2s;
+    }
   }
 }
 
@@ -171,7 +185,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.35s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;

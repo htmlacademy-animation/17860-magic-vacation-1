@@ -1,6 +1,7 @@
+
 @keyframes slideInVertical {
   from {
-    transform: translateY(70%);
+    transform: translateY(100%);
   }
   to {
     transform: translate(0);
@@ -9,9 +10,29 @@
 
 @keyframes slideInHorizontal {
   from {
-    transform: translateX(70%);
+    transform: translateX(100%);
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }

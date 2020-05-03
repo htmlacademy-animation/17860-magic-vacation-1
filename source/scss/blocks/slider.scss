@@ -5,6 +5,7 @@
 
   .swiper-wrapper {
     min-height: 100vh;
+    transition-delay: 1s;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
@@ -276,6 +277,14 @@
   }
 }
 
-.screen--story.active .slider__item-text {
-  animation: fadeIn 0.5s ease-in both 1s, slideInHorizontal 0.3s ease-in both 1s;
+.screen--story.active .swiper-slide .slider__item-text {
+  animation: fadeOut 0.35s ease-out both;
+}
+
+.screen--story.active .swiper-slide-active .slider__item-text {
+  animation: fadeIn 0.35s ease-in backwards 1s, slideInHorizontal 0.35s ease-in backwards 1s;
+}
+
+.screen--story.active .swiper-slide-next .slider__item-text {
+  animation: fadeIn 0.35s ease-in backwards 1.25s, slideInHorizontal 0.35s ease-in backwards 1.25s;
 }
