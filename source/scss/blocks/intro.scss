@@ -162,3 +162,7 @@
     font-size: 48px;
   }
 }
+
+.screen--intro.active .intro__message {
+  animation: fadeIn 0.35s ease 2s both, slideInVertical 0.35s ease 2s both;
+}

@@ -186,3 +186,18 @@
 .chat__footer {
   margin-top: auto;
 }
+
+.screen--game.active .chat__message-input {
+  animation: slideInput 0.35s ease-in both;
+}
+
+@keyframes slideInput {
+  from {
+    margin-left: calc(100% - 12rem);
+    width: 12rem;
+  }
+  to {
+    margin-left: 0;
+    width: 100%;
+  }
+}
