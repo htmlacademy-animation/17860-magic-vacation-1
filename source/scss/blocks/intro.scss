@@ -93,6 +93,10 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.35s ease;
+  transition-delay: 1s;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -163,6 +167,7 @@
   }
 }
 
-.screen--intro.active .intro__message {
-  animation: fadeIn 0.35s ease 2s both, slideInVertical 0.35s ease 2s both;
+body.loaded .intro__message {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
