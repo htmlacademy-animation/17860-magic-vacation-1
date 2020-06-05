@@ -3,9 +3,11 @@ import throttle from 'lodash/throttle';
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
+    this.SCREEN_BACKGROUND_TRANSITION = 350;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.screenBackgroundBlock = document.querySelector(`.screen__background`);
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -40,12 +42,27 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
-    });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-    this.screenElements[this.activeScreen].classList.add(`active`);
+    const activeScreenName = this.screenElements[this.activeScreen].id;
+
+    const toggleScreens = () => {
+      this.screenElements.forEach((screen) => {
+        screen.classList.add(`screen--hidden`);
+        screen.classList.remove(`active`);
+      });
+
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+      this.screenElements[this.activeScreen].classList.add(`active`);
+    };
+
+    if (activeScreenName === `prizes`) {
+      this.screenBackgroundBlock.classList.add(`active`);
+      setTimeout(() => {
+        this.screenBackgroundBlock.classList.remove(`active`);
+        toggleScreens();
+      }, this.SCREEN_BACKGROUND_TRANSITION);
+    } else {
+      toggleScreens();
+    }
   }
 
   changeActiveMenuItem() {
