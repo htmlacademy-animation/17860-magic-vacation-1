@@ -159,6 +159,9 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.53, 0.7, 0.55, 1.6), opacity 0.35s ease-in;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -179,9 +182,30 @@
 
   p {
     margin: 0;
+    opacity: 0;
+    transform: translate3d(2rem, 0, 0);
+    transition: opacity 0.35s ease-in, transform 0.35s cubic-bezier(.2, .49, .28, 1.01);
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
+    }
+  }
+}
+
+body.loaded .screen--rules.active {
+  @for $i from 1 through 4 {
+    .rules__item:nth-child(#{$i}) {
+      &::before {
+        opacity: 1;
+        transform: scale(1);
+        transition-delay: (350ms * ($i - 1));
+      }
+
+      p {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        transition-delay: (250ms + 350ms * ($i - 1));
+      }
     }
   }
 }
