@@ -7,7 +7,7 @@ export default class TypographyBuild {
       timingFn = `ease`,
       delay,
   ) {
-    this._TIME_SPACE = 20;
+    this._TIME_SPACE = 40;
 
     this._selector = selector;
     this._timer = timer;

@@ -24,9 +24,11 @@ rules();
 
 const fullPageScroll = new FullPageScroll();
 const titleAnimator = new TypographyAnimator(`.intro__title`, 350, `active`, `transform`, `cubic-bezier(0.1, 0.53, 0.32, 0.98)`, 750);
+const dateAnimator = new TypographyAnimator(`.intro__date`, 350, `active`, `transform`, `cubic-bezier(0.1, 0.53, 0.32, 0.98)`, 1150);
 fullPageScroll.init();
 
 window.addEventListener(`load`, () => {
   document.body.classList.add(`loaded`);
   titleAnimator.runAnimation();
+  dateAnimator.runAnimation();
 });
