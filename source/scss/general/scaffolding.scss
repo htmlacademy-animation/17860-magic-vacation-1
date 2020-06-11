@@ -99,3 +99,18 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.text-word {
+  margin: 0 5px;
+  display: inline-block;
+  margin-top: -0.2em;
+  vertical-align: baseline;
+  white-space: nowrap;
+  overflow: hidden;
+
+  > span {
+    transform: translate3d(0, 1.25em, 0);
+    display: inline-block;
+    line-height: 1.2;
+  }
+}
