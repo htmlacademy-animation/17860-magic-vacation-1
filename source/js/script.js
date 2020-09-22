@@ -7,6 +7,7 @@ import chat from './modules/chat.js';
 import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
+import prizes from './modules/prizes.js';
 import FullPageScroll from './modules/full-page-scroll';
 import rules from './modules/rules.js';
 import TypographyAnimator from './modules/typography';
@@ -21,6 +22,7 @@ result();
 form();
 social();
 rules();
+prizes();
 
 const fullPageScroll = new FullPageScroll();
 const titleAnimator = new TypographyAnimator(`.intro__title`, 350, `active`, `transform`, `cubic-bezier(0.1, 0.53, 0.32, 0.98)`, 750);

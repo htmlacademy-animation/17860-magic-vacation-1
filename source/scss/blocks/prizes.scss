@@ -127,6 +127,8 @@
   }
 
   &--journeys {
+    transform: translate3d(33.5rem, 0, 0);
+
     .prizes__icon {
       position: relative;
       left: -5.9rem;
@@ -158,6 +160,7 @@
 
   &--cases {
     margin-left: 7rem;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
@@ -191,6 +194,9 @@
   }
 
   &--codes {
+    opacity: 0;
+    transform: translate3d(5rem, 0, 0);
+
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
@@ -328,5 +334,63 @@
       width: 0.5rem;
       height: 0.5rem;
     }
+  }
+}
+
+.screen--prizes.screen--animations-not-completed {
+  .prizes__item--journeys {
+    animation: 1s ease 3s slideOutJourneys forwards;
+  }
+
+  .prizes__item--cases {
+    animation: 1s ease 3.5s fadeInCases forwards;
+  }
+
+  .prizes__item--codes {
+    animation: 1s ease-out 6s showInCodes forwards;
+  }
+}
+
+.screen--prizes.screen--animations-completed {
+  .prizes__item--journeys {
+    transform: none;
+  }
+
+  .prizes__item--cases {
+    opacity: 1;
+  }
+
+  .prizes__item--codes {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutJourneys {
+  from {
+    transform: translate3d(33.5rem, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInCases {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showInCodes {
+  from {
+    opacity: 0;
+    transform: translate3d(5rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
