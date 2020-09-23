@@ -1,4 +1,16 @@
 export default () => {
+  const headingsMap = {
+    result: {
+      headingUrl: `img/win-heading.svg`,
+    },
+    result2: {
+      headingUrl: `img/win-heading.svg`,
+    },
+    result3: {
+      headingUrl: `img/lose-heading.svg`,
+    }
+  };
+
   let showResultEls = document.querySelectorAll(`.js-show-result`);
   let results = document.querySelectorAll(`.screen--result`);
   if (results.length) {
@@ -14,6 +26,7 @@ export default () => {
         });
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
+        targetEl[0].querySelector(`.result__title img`).src = headingsMap[target].headingUrl;
       });
     }
 
